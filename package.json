@@ -1,0 +1,10 @@
+{
+  "name": "sde-prep-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/data.js && node --check src/progress.js && node --check src/app.js"
+  }
+}
