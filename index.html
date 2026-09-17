@@ -4,93 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A focused daily SDE interview preparation tracker for DSA, core CS, development, and applications.">
-  <meta name="theme-color" content="#070a12">
+  <meta name="theme-color" content="#f2eee6">
   <title>SDE Prep Tracker — Sep 16 to Oct 30</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-
-  <header class="site-header container">
-    <a class="brand" href="#top" aria-label="SDE Prep home">
-      <span class="brand-mark">M</span>
-      <span>Mission: Hireable</span>
-    </a>
-    <div class="range-pill"><span></span> 45-day placement sprint</div>
+  <header class="utility-header">
+    <div class="container utility-header-inner">
+      <a class="wordmark" href="#top" aria-label="SDE Prep home"><span class="wordmark-index">MR</span><span>SDE Prep</span></a>
+      <div class="sprint-identity" aria-label="Sprint dates"><span>Placement sprint</span><strong>Sep 16 — Oct 30</strong></div>
+    </div>
   </header>
 
   <main id="top" class="container">
-    <section class="hero">
-      <p class="eyebrow">16 SEP — 30 OCT 2026</p>
-      <h1>Turn preparation into<br><span>interview performance.</span></h1>
-      <p class="hero-copy">No more collecting technologies. Build the fundamentals, repeat the patterns, and show up harder to reject.</p>
-      <div class="hero-meta">
-        <span><b>2</b> DSA / day</span>
-        <span><b>1</b> CS topic / day</span>
-        <span><b>0</b> zero days</span>
+    <section class="progress-summary" aria-labelledby="page-title">
+      <div class="progress-intro">
+        <p class="section-label">45-day programme / 2026</p>
+        <h1 id="page-title">SDE preparation</h1>
+        <p>One deliberate day at a time.</p>
       </div>
-    </section>
-
-    <section class="stats-grid" aria-label="Overall progress">
-      <article class="stat-card stat-primary">
-        <p>Overall progress</p>
-        <strong id="overall-progress">0%</strong>
-        <div class="progress-track"><span id="overall-progress-bar"></span></div>
-      </article>
-      <article class="stat-card"><p>Current streak</p><strong><span id="current-streak">0</span><small> days</small></strong></article>
-      <article class="stat-card"><p>Days conquered</p><strong><span id="completed-days">0</span><small> / 45</small></strong></article>
-      <article class="stat-card"><p>Days remaining</p><strong id="remaining-days">45</strong></article>
+      <div class="progress-figure"><span>Overall</span><strong id="overall-progress">0%</strong></div>
+      <div class="progress-track" aria-hidden="true"><span id="overall-progress-bar"></span></div>
+      <dl class="progress-facts">
+        <div><dt>Current streak</dt><dd><span id="current-streak">0</span> days</dd></div>
+        <div><dt>Completed</dt><dd><span id="completed-days">0</span> / 45 days</dd></div>
+        <div><dt>Remaining</dt><dd><span id="remaining-days">45</span> days</dd></div>
+      </dl>
     </section>
 
     <p id="storage-warning" class="warning" role="status" aria-live="polite" hidden>Browser storage is unavailable. Progress will only last for this session.</p>
 
-    <div class="dashboard-grid">
-      <section class="panel daily-panel" aria-labelledby="selected-date">
-        <div class="panel-heading">
-          <div>
-            <p id="day-context" class="eyebrow">TODAY'S MISSION</p>
-            <h2 id="selected-date">Wednesday, 16 September</h2>
-          </div>
+    <div class="planner-layout">
+      <section class="daily-workspace" aria-labelledby="selected-date">
+        <header class="workspace-heading">
+          <div><p id="day-context" class="section-label">TODAY'S WORK</p><h2 id="selected-date">Wednesday, 16 September</h2></div>
           <div class="day-score"><strong id="daily-progress">0%</strong><span>complete</span></div>
-        </div>
-        <div class="day-progress"><span id="daily-progress-bar"></span></div>
+        </header>
+        <div class="day-progress" aria-hidden="true"><span id="daily-progress-bar"></span></div>
         <div id="task-list" class="task-list" aria-live="polite"></div>
-        <div class="daily-actions">
+        <nav class="daily-actions" aria-label="Choose preparation day">
           <button id="previous-day" class="button button-quiet" type="button">← Previous</button>
           <button id="today" class="button button-accent" type="button">Today</button>
           <button id="next-day" class="button button-quiet" type="button">Next →</button>
-        </div>
+        </nav>
       </section>
 
-      <aside class="sidebar">
-        <section class="panel calendar-panel" aria-labelledby="calendar-title">
-          <div class="panel-heading compact"><div><p class="eyebrow">CONSISTENCY</p><h2 id="calendar-title">Sprint calendar</h2></div></div>
+      <aside class="planner-aside">
+        <section class="calendar-section" aria-labelledby="calendar-title">
+          <header class="aside-heading"><p class="section-label">SPRINT INDEX</p><h2 id="calendar-title">Calendar</h2></header>
           <div class="calendar-weekdays" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
           <div id="calendar" class="calendar" role="grid" aria-label="Preparation calendar"></div>
           <div class="calendar-legend"><span><i class="legend-done"></i>Complete</span><span><i class="legend-active"></i>Selected</span></div>
         </section>
-
-        <section class="minimum-card">
-          <p class="eyebrow">BAD DAY PROTOCOL</p>
-          <h2>Never allow a zero day.</h2>
-          <ul><li>1 DSA problem</li><li>20 min Core CS</li><li>30 min project</li><li>10 min revision</li></ul>
+        <section class="margin-note">
+          <p class="section-label">ON A BAD DAY</p><h2>Keep the chain alive.</h2>
+          <ol><li>1 DSA problem</li><li>20 min Core CS</li><li>30 min project</li><li>10 min revision</li></ol>
         </section>
       </aside>
     </div>
 
-    <section class="roadmap-section" aria-labelledby="roadmap-title">
-      <div class="section-heading"><div><p class="eyebrow">THE ROUTE</p><h2 id="roadmap-title">Seven focused weeks</h2></div><p>Depth beats scattered exposure. Every week has one job.</p></div>
+    <section class="syllabus" aria-labelledby="roadmap-title">
+      <header class="syllabus-heading">
+        <div><p class="section-label">SYLLABUS</p><h2 id="roadmap-title">Seven focused weeks</h2></div>
+        <p>Each week narrows the field. Finish the fundamentals before chasing the interesting distractions.</p>
+      </header>
       <div id="roadmap" class="roadmap"></div>
     </section>
 
-    <section class="reset-section">
-      <div><p class="eyebrow">STARTING OVER?</p><h2>Progress should be honest.</h2><p>Resetting permanently clears every checked task on this device.</p></div>
+    <section class="settings-row">
+      <div><p class="section-label">LOCAL DATA</p><p>Your progress stays in this browser. No account, no cloud sync.</p></div>
       <button id="reset-progress" class="button button-danger" type="button">Reset all progress</button>
     </section>
   </main>
 
-  <footer class="container"><p>Built for repetition, not motivation.</p><p>Local-first · No account · No excuses</p></footer>
+  <footer class="container site-footer"><span>Mokshagna Reddy</span><span>Built for consistent practice.</span></footer>
   <script type="module" src="src/app.js"></script>
 </body>
 </html>
