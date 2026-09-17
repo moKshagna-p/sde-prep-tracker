@@ -48,6 +48,31 @@ test('stylesheet defines responsive, accessible, and stateful presentation', asy
   assert.match(css, /\.warning/);
 });
 
+test('page uses the editorial today-first layout without AI dashboard decoration', async () => {
+  const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+  assert.match(html, /class="utility-header/);
+  assert.match(html, /class="progress-summary/);
+  assert.match(html, /class="planner-layout/);
+  assert.match(html, /class="daily-workspace/);
+  assert.match(html, /class="syllabus/);
+  assert.doesNotMatch(html, /class="ambient/);
+  assert.doesNotMatch(html, /class="hero/);
+  assert.doesNotMatch(html, /class="stat-card/);
+});
+
+test('editorial stylesheet avoids glow and glass dashboard patterns', async () => {
+  const css = await readFile(new URL('../styles.css', import.meta.url), 'utf8');
+  assert.match(css, /--paper:/);
+  assert.match(css, /--ink:/);
+  assert.match(css, /--accent:/);
+  assert.match(css, /\.daily-workspace/);
+  assert.match(css, /\.syllabus/);
+  assert.doesNotMatch(css, /backdrop-filter/);
+  assert.doesNotMatch(css, /filter:\s*blur/);
+  assert.doesNotMatch(css, /box-shadow:[^;]*0 0/);
+}
+);
+
 test('GitHub Pages workflow deploys main with required permissions', async () => {
   const workflow = await readFile(new URL('../.github/workflows/pages.yml', import.meta.url), 'utf8');
   assert.match(workflow, /branches:\s*\[main\]/);
